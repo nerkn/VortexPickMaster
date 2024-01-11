@@ -14,7 +14,28 @@ export const useRickAndMorty = create<UseRickAndMorty>()((_set, get) => ({
   apiUrl: "",
   searches: [],
   cachedEpisodes: [],
-  cachedChars: { "": [] },
+  cachedChars: {
+    "": [
+      {
+        id: 1,
+        name: "Rick Sanchez",
+        image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+        epiCount: 51,
+      },
+      {
+        id: 2,
+        name: "Morty Smith",
+        image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+        epiCount: 51,
+      },
+      {
+        id: 3,
+        name: "Summer Smith",
+        image: "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+        epiCount: 42,
+      },
+    ],
+  },
   search: async (str: keyof CachedSearch) => {
     let state = get();
     if (str in state.cachedChars) return state.cachedChars[str];
