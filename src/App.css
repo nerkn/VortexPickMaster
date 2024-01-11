@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+:root {
+  --multiSelect-dropDownList-background: #f8fafc;
+  --multiSelect-dropDownList-item-backgroud: #f8fafc;
+  --multiSelect-dropDownList-item-border: #888;
+  --multiSelect-dropDownList-item-backgroud-selected: #fcdada;
+  --multiSelect-dropDownList-item-backgroud-focus: #dfd475;
+  --multiSelect-border-radius: 0.5em;
+  --multiSelect-selecteds-color: #eee;
+  --multiSelect-selecteds-background: #e2e8f0;
+  --multiSelect-selecteds-background-focus: #545f6d;
+  --multiSelect-selecteds-x-color: #e7e7e7;
+  --multiSelect-selecteds-x-background: #777;
+}
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+.gap {
+  gap: 0.5em;
+}
+.items-start {
+  align-items: flex-start;
+}
+.text-lg {
+  font-size: large;
+}
+.multiselect {
+  position: relative;
+}
+.multiselect *:focus-visible {
+  outline: 0;
+}
+.multiselect img {
+  width: 120px;
+  border-radius: 1em;
+  filter: saturate(1.5);
+  border-radius: 5em;
+}
+.multiselect .disappear {
+  border: 0;
+  outline: 0;
+  flex-grow: 1;
+  font-size: 1em;
+  padding: 0.7em; /* prevents second line jumps of height difference*/
+}
+.multiselect .dropDownList {
+  display: flex;
+  width: fit-content;
+  max-height: 300px;
+  overflow-y: auto;
+  flex-direction: column;
+  border-radius: 0.5em;
+  background-color: var(--multiSelect-dropDownList-background);
+  padding: 0;
+  position: absolute;
+}
+.multiselect .dropDownList > div {
+  border: 1px solid var(--multiSelect-dropDownList-item-border);
+  background-color: var(--multiSelect-dropDownList-item-backgroud);
+  border-top: 0px;
+  border-collapse: collapse;
+  padding: 7px 1px;
+}
+.multiselect .dropDownList > div.selected {
+  background-color: var(--multiSelect-dropDownList-item-backgroud-selected);
+}
+.multiselect .dropDownList > div:focus {
+  background-color: var(--multiSelect-dropDownList-item-backgroud-focus);
+  border-style: dotted;
+}
+.multiselect .dropDownList > div.selected:focus {
+  background-image: linear-gradient(
+    120deg,
+    var(--multiSelect-dropDownList-item-backgroud-selected) 25%,
+    var(--multiSelect-dropDownList-item-backgroud-focus) 75%
+  );
+}
+
+.multiselect .dropDownList > div:nth-child(1) {
+  border-radius: 0.5em 0.5em 0 0;
+  border-top: 1px solid var(--multiSelect-dropDownList-item-border);
+}
+.multiselect .dropDownList > div:nth-last-child(1) {
+  border-radius: 0 0 0.5em 0.5em;
+}
+.multiselect .dropDownList::-webkit-scrollbar-thumb {
+  background: var(--multiSelect-dropDownList-item-backgroud-selected);
+}
+
+.multiselect .dropDownList::-webkit-scrollbar {
+  height: 5px;
+  width: 0.5em;
+}
+.multiselect .box {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 1em;
+  border: 1px solid var(--multiSelect-dropDownList-item-border);
+  padding: 0.5em;
+  gap: 0.5em;
+}
+.multiselect .selectedOption {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0.5em;
+  background: var(--multiSelect-selecteds-background);
+  border: 1px solid var(--multiSelect-selecteds-background);
+}
+.multiselect .selectedOption:focus {
+  border: 1px solid var(--multiSelect-selecteds-background-focus);
+}
+.multiselect .selectedOption a {
+  padding: 0.2em 0.6em 0.3em 0.5em;
+  color: var(--multiSelect-selecteds-x-color);
+  background-color: var(--multiSelect-selecteds-x-background);
+  border-radius: var(--multiSelect-border-radius);
+  cursor: grab;
+  margin-left: 0.5em;
+  font-weight: bold;
+  text-align: center;
+}
+.toastCanteen {
+  position: absolute;
+  right: 100px;
+  top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.toastOne {
+  border: 1px dotted #ff00aa;
+  background-image: linear-gradient(7deg, #f3e4ee 15%, #fff 50%, #f3e4ee 85%);
+  padding: 1em;
+  color: #530439;
+  border-radius: 0.5em;
+  width: 250px;
+}
