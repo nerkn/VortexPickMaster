@@ -1,10 +1,5 @@
 import { create } from "zustand";
-import {
-  ApiResponse,
-  DisneApiResponse,
-  DisneyData,
-  SearchResult,
-} from "../types";
+import { DisneApiResponse, DisneyData, SearchResult } from "../types";
 
 type CachedSearch = { [key: string]: SearchResult[] };
 
