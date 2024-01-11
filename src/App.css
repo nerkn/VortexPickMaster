@@ -71,6 +71,15 @@ body {
 .gap {
   gap: 0.5em;
 }
+.p {
+  padding: 0.25em;
+}
+.p2 {
+  padding: 0.5em;
+}
+.p4 {
+  padding: 1em;
+}
 .items-start {
   align-items: flex-start;
 }
@@ -187,4 +196,13 @@ body {
   color: #530439;
   border-radius: 0.5em;
   width: 250px;
+}
+.apiSelector {
+  padding: 1em;
+  border-radius: 5px;
+  background-color: var(--multiSelect-selecteds-background);
+  margin: 1em;
+}
+.apiSelector.selected {
+  background-color: var(--multiSelect-selecteds-x-background);
 }

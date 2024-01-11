@@ -21,6 +21,23 @@ export type CharacterApiResponse = Character & {
   url: string;
   created: string;
 };
+export type DisneyData = {
+  _id: number;
+  name: string;
+  films: string[];
+  shortFilms: string[];
+  tvShows: string[];
+  imageUrl: string;
+};
+export type DisneApiResponse<T> = {
+  info: {
+    count: number;
+    totalPages: number;
+    nextPage: string | null;
+    previousPage: string | null;
+  };
+  data: T[];
+};
 export type Episode = {
   id: number;
   name: string;
