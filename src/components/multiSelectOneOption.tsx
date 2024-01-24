@@ -12,17 +12,19 @@ export function MultiSelectOneOption({
   select: (option: boolean) => void;
 }) {
   function name(name: string) {
-    if (enteredTxt.length < 3) return name;
+    if (enteredTxt.length < 1) return name;
     let reg = new RegExp(enteredTxt, "ig");
-    let newName = name.split(reg);
-    let newnewName = [];
-    for (let n in newName) {
-      newnewName.push(newName[n]);
-      if (+n < newName.length - 1) {
-        newnewName.push(<b>{enteredTxt}</b>);
-      }
+    let foundName: RegExpExecArray | null;
+    let lastIndex = 0;
+    let part = [];
+    while ((foundName = reg.exec(name)) !== null) {
+      part.push(name.slice(lastIndex, foundName.index));
+      part.push(<b>{foundName}</b>);
+      lastIndex = reg.lastIndex;
     }
-    return newnewName;
+    if (lastIndex < name.length) part.push(name.slice(lastIndex));
+
+    return part;
   }
   function episodeCount() {
     switch (opt.epiCount) {
